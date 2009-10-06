@@ -77,7 +77,6 @@ class admin_plugin_oiddelegate extends DokuWiki_Admin_Plugin {
             }
         }
 
-
         // prepare new config file
         $data = "# OpenID Delegation Setup\n\n";
         foreach($_REQUEST['oiddel'] as $line){
@@ -133,7 +132,7 @@ class admin_plugin_oiddelegate extends DokuWiki_Admin_Plugin {
             $oid      = trim($oid);
             $server   = trim($server);
             $provider = trim($provider);
-            $xrds     = trim($provider);
+            $xrds     = trim($xrds);
 
             echo '<tr>';
             echo '<td><input type="text" class="edit" name="oiddel['.$row.'][0]" value="'.hsc($page).'" /></td>';
