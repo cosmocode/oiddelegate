@@ -1,5 +1,5 @@
 ====== OpenID Delegation Setup ======
 
-Here you can setup OpenID [[http://openid.net/specs/openid-authentication-1_1.html#delegating_authentication|delegation headers]] for certain wiki pages. You may use the ''*'' character as page name to setup a wiki wide default delegate.
+Here you can setup OpenID [[http://wiki2008.openid.net/Delegation|delegation headers]] for certain wiki pages. You may use the ''*'' character as page name to setup a wiki wide default delegate. Entries can be delted by emptying the page field and saving.
 
 Your configuration is written to ''conf/openid-delegates.conf'', so make sure this file is writable.

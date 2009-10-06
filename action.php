@@ -36,27 +36,41 @@ class action_plugin_oiddelegate extends DokuWiki_Action_Plugin {
         if(!$delegate) $delegate = $delegates['*']; // fall back to default if any
         if(!$delegate) return true;
 
-        list($oid,$server) = preg_split('/\s+/',$delegate,2);
-        $oid = trim($oid);
-        $server = trim($server);
-        if(!$server) $server = $oid;
+        list($oid,$server,$provider,$xrds) = preg_split('/\s+/',$delegate,4);
+        $oid      = trim($oid);
+        $server   = trim($server);
+        $provider = trim($provider);
+        $xrds     = trim($provider);
 
-        $event->data['link'][] = array(
-            'rel'  => 'openid.server',
-            'href' => $server,
-        );
-        $event->data['link'][] = array(
-            'rel'  => 'openid.delegate',
-            'href' => $oid,
-        );
-        $event->data['link'][] = array(
-            'rel'  => 'openid2.provider',
-            'href' => $server,
-        );
-        $event->data['link'][] = array(
-            'rel'  => 'openid2.localid',
-            'href' => $oid,
-        );
+        // openid 1 support
+        if($server){
+            $event->data['link'][] = array(
+                'rel'  => 'openid.server',
+                'href' => $server,
+            );
+            $event->data['link'][] = array(
+                'rel'  => 'openid.delegate',
+                'href' => $oid,
+            );
+        }
+        // openid 2 support
+        if($provider){
+            $event->data['link'][] = array(
+                'rel'  => 'openid2.provider',
+                'href' => $provider,
+            );
+            $event->data['link'][] = array(
+                'rel'  => 'openid2.localid',
+                'href' => $oid,
+            );
+        }
+        // openid 2 + XRDS
+        if($xrds){
+            $event->data['meta'][] = array(
+                'http-equiv'  => 'X-XRDS-Location',
+                'href' => $xrds,
+            );
+        }
 
         return true;
     }
