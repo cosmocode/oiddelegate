@@ -49,6 +49,14 @@ class action_plugin_oiddelegate extends DokuWiki_Action_Plugin {
             'rel'  => 'openid.delegate',
             'href' => $oid,
         );
+        $event->data['link'][] = array(
+            'rel'  => 'openid2.provider',
+            'href' => $server,
+        );
+        $event->data['link'][] = array(
+            'rel'  => 'openid2.localid',
+            'href' => $oid,
+        );
 
         return true;
     }
