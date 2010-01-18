@@ -1,5 +1,6 @@
 # General Plugin Info do not edit
 
+base   oiddelegate
 author Andreas Gohr
 email  gohr@cosmocode.de
 date   2009-10-06

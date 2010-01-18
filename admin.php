@@ -16,7 +16,7 @@ class admin_plugin_oiddelegate extends DokuWiki_Admin_Plugin {
      * return some info
      */
     function getInfo(){
-        return confToHash(dirname(__FILE__).'/info.txt');
+        return confToHash(dirname(__FILE__).'/plugin.info.txt');
     }
 
 
