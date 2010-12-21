@@ -40,7 +40,7 @@ class action_plugin_oiddelegate extends DokuWiki_Action_Plugin {
         $oid      = trim($oid);
         $server   = trim($server);
         $provider = trim($provider);
-        $xrds     = trim($provider);
+        $xrds     = trim($xrds);
 
         // openid 1 support
         if($server){
