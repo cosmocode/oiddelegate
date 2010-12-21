@@ -60,7 +60,7 @@ class action_plugin_oiddelegate extends DokuWiki_Action_Plugin {
                 'href' => $provider,
             );
             $event->data['link'][] = array(
-                'rel'  => 'openid2.localid',
+                'rel'  => 'openid2.local_id',
                 'href' => $oid,
             );
         }
