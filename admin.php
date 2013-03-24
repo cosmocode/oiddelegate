@@ -110,7 +110,7 @@ class admin_plugin_oiddelegate extends DokuWiki_Admin_Plugin {
     function html() {
         global $lang;
 
-        echo $this->plugin_locale_xhtml('intro');
+        echo $this->locale_xhtml('intro');
 
 
         echo '<form action="" method="post">';
