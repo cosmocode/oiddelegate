@@ -2,8 +2,8 @@
 
 base   oiddelegate
 author Andreas Gohr
-email  gohr@cosmocode.de
-date   2013-03-24
+email  dokuwiki@cosmocode.de
+date   2015-02-26
 name   OpenID Delegation Plugin
 desc   Add OpenID delegation headers to all or specific pages in your wiki.
 url    http://www.dokuwiki.org/plugin:oiddelegate
